@@ -15,8 +15,6 @@ get("/homepage") do
 end
 
 get("/rock") do
-  
-  erb(:elephant)
 
 counter=["rock","paper","scissors"].sample
 
@@ -28,15 +26,13 @@ else counter=="scissors"
   result="We win"
 end
 
-outcome = "We played rock! They played #{counter}! #{result}!"
+@outcome = "We played rock! They played #{counter}! #{result}!"
 
-"<p>#{outcome}</p>"
+erb(:rock)
 end
 
 
 get("/paper") do
-  
-  erb(:elephant)
 
   counter=["rock","paper","scissors"].sample
   
@@ -54,8 +50,6 @@ get("/paper") do
   end
 
   get("/scissors") do
-    
-    erb(:elephant)
     
     counter=["rock","paper","scissors"].sample
     
