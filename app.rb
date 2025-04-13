@@ -29,6 +29,7 @@ end
 @outcome = "We played rock! They played #{counter}! #{result}!"
 
 erb(:rock)
+
 end
 
 
@@ -44,9 +45,10 @@ get("/paper") do
     result="We win"
   end
   
-  outcome = "We played paper! They played #{counter}! #{result}!"
+  @outcome = "We played paper! They played #{counter}! #{result}!"
   
-  "<p>#{outcome}</p>"
+  erb(:paper)
+
   end
 
   get("/scissors") do
@@ -61,9 +63,10 @@ get("/paper") do
       result="We win"
     end
     
-    outcome = "We played scissors! They played #{counter}! #{result}!"
+    @outcome = "We played scissors! They played #{counter}! #{result}!"
     
-    "<p>#{outcome}</p>"
+    erb(:paper)
+    
     end
     
   
