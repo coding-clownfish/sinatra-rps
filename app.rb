@@ -3,7 +3,7 @@ require "sinatra/reloader"
 require "better_errors"
 require "binding_of_caller"
 
-get("/homepage") do
+get("/") do
   "
   <p></p>
 
@@ -26,7 +26,8 @@ else counter=="scissors"
   result="We win"
 end
 
-@outcome = "We played rock! They played #{counter}! #{result}!"
+@counter=counter
+@result=result
 
 erb(:rock)
 
@@ -45,7 +46,8 @@ get("/paper") do
     result="We win"
   end
   
-  @outcome = "We played paper! They played #{counter}! #{result}!"
+  @counter=counter
+  @result=result
   
   erb(:paper)
 
@@ -63,7 +65,8 @@ get("/paper") do
       result="We win"
     end
     
-    @outcome = "We played scissors! They played #{counter}! #{result}!"
+    @counter=counter
+    @result=result
     
     erb(:paper)
     
