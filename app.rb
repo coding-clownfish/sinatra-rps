@@ -4,13 +4,7 @@ require "better_errors"
 require "binding_of_caller"
 
 get("/") do
-  "
-  <p></p>
-
-
-  <h1>Welcome to Rock-Paper-Scissors!</h1>
-  <p>Rock-paper-scissors (also known as paper, scissors, stone or other variants) is a hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand.</p>
-  "
+  
   erb(:elephant)
 end
 
@@ -21,9 +15,9 @@ counter=["rock","paper","scissors"].sample
 if counter=="rock"
   result="We tied"
 elsif counter=="paper"
-  result="We lose"
+  result="We lost"
 else counter=="scissors"
-  result="We win"
+  result="We won"
 end
 
 @counter=counter
@@ -41,9 +35,9 @@ get("/paper") do
   if counter=="paper"
     result="We tied"
   elsif counter=="scissors"
-    result="We lose"
+    result="We lost"
   else counter=="rock"
-    result="We win"
+    result="We won"
   end
   
   @counter=counter
@@ -60,9 +54,9 @@ get("/paper") do
     if counter=="scissors"
       result="We tied"
     elsif counter=="rock"
-      result="We lose"
+      result="We lost"
     else counter=="paper"
-      result="We win"
+      result="We won"
     end
     
     @counter=counter
